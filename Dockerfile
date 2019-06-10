@@ -1,7 +1,9 @@
-FROM python:3.7-alpine
+FROM python:3
 
 ADD requirements.txt .
 
-RUN pip install --upgrade pip setuptools && \
+RUN apt-get update && \
+  apt-get install make && \
+  pip install --upgrade pip setuptools && \
   pip install -r requirements.txt
 
