@@ -1,5 +1,5 @@
 
-NAME=sphinx
+NAME=python-sphinx
 TAG=production
 
 build:
