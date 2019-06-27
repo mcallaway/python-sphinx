@@ -1,6 +1,5 @@
 sphinx
 sphinx-autobuild
-sphinx-confluence
 sphinx-jinja
 sphinxcontrib-confluencebuilder
 sphinxcontrib-plantuml
