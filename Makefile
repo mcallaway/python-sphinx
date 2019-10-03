@@ -1,15 +1,17 @@
 
 NAME=python-sphinx
 TAG=production
+REGISTRY=registry.gsc.wustl.edu/
+PROJECT=genome
 
 build:
-	docker build . -t registry.gsc.wustl.edu/genome/$(NAME):$(TAG)
+	docker build . -t $(REGISTRY)$(PROJECT)/$(NAME):$(TAG)
 
 latest: build
-	docker tag registry.gsc.wustl.edu/genome/$(NAME):$(TAG) registry.gsc.wustl.edu/genome/$(NAME):latest
+	docker tag $(REGISTRY)$(PROJECT)/$(NAME):$(TAG) $(REGISTRY)$(PROJECT)/$(NAME):latest
 
 push:
-	docker push registry.gsc.wustl.edu/genome/$(NAME):$(TAG)
-	docker push registry.gsc.wustl.edu/genome/$(NAME):latest
+	docker push $(REGISTRY)$(PROJECT)/$(NAME):$(TAG)
+	docker push $(REGISTRY)$(PROJECT)/$(NAME):latest
 
 all: build latest push
