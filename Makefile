@@ -1,17 +1,20 @@
 
 NAME=python-sphinx
+VERSION=1.2019.11
 TAG=production
 REGISTRY=registry.gsc.wustl.edu/
 PROJECT=genome
 
 build:
-	docker build . -t $(REGISTRY)$(PROJECT)/$(NAME):$(TAG)
+	docker build . -t $(REGISTRY)$(PROJECT)/$(NAME):$(VERSION)
 
-latest: build
-	docker tag $(REGISTRY)$(PROJECT)/$(NAME):$(TAG) $(REGISTRY)$(PROJECT)/$(NAME):latest
+tag: build
+	docker tag $(REGISTRY)$(PROJECT)/$(NAME):$(VERSION) $(REGISTRY)$(PROJECT)/$(NAME):$(TAG)
+	docker tag $(REGISTRY)$(PROJECT)/$(NAME):$(VERSION) $(REGISTRY)$(PROJECT)/$(NAME):latest
 
-push:
+push: tag
+	docker push $(REGISTRY)$(PROJECT)/$(NAME):$(VERSION)
 	docker push $(REGISTRY)$(PROJECT)/$(NAME):$(TAG)
 	docker push $(REGISTRY)$(PROJECT)/$(NAME):latest
 
-all: build latest push
+all: build tag push
