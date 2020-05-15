@@ -3,3 +3,4 @@ sphinx-autobuild
 sphinx-jinja
 sphinxcontrib-confluencebuilder
 sphinxcontrib-plantuml
+sphinx-rtd-theme

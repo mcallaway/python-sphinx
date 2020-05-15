@@ -4,7 +4,7 @@ ADD requirements.txt .
 
 RUN apt-get update && \
   apt-get install -y \
-  make jq rsync openjdk-8-jre-headless graphviz && \
+  make jq rsync default-jre-headless graphviz && \
   pip install --upgrade pip setuptools && \
   pip install -r requirements.txt && \
   apt-get clean all && \
