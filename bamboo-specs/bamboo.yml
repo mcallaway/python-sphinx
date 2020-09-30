@@ -1,0 +1,20 @@
+---
+version: 2
+plan:
+    project-key: RT
+    key: SPDI
+    name: Sphinx Python Docker Image
+
+stages:  # "Build Plan", containing list of stages
+    - Build Image:  # Stage name, containing list of jobs
+          - Build Image  # Job name
+
+Build Image:  # Job name, from above, containing description of job
+    tasks:  # Contains a list of individual tasks in the job
+        - script: |-
+              # YAML bamboo-specs doesn't support the docker tasks, apparently
+              docker build . -t registry.gsc.wustl.edu/ris1/python-sphinx:${bamboo_buildNumber}
+        - script: |-
+              # need auth & push
+              docker tag registry.gsc.wustl.edu/ris1/python-sphinx:${bamboo_buildNumber} registry.gsc.wustl.edu/ris1/python-sphinx:latest
+              docker push registry.gsc.wustl.edu/ris1/python-sphinx:latest
