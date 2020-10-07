@@ -1,6 +1,6 @@
 
 NAME=python-sphinx
-VERSION=1.2019.11
+VERSION=20201005
 TAG=production
 REGISTRY=registry.gsc.wustl.edu/
 PROJECT=genome
