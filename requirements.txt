@@ -5,12 +5,19 @@ numpy
 scipy
 pandas
 seaborn
+# for advanced regression plots
+statsmodels
+# for clustering large matrices
+fastcluster
+
 # now sphinx
 sphinx
 sphinx-autobuild
 sphinx-jinja
 sphinxcontrib-confluencebuilder
 sphinxcontrib-plantuml
-# now themes
+
+# now add some themes
+sphinx_bootstrap_theme
 sphinx-rtd-theme
 Flask-Sphinx-Themes
