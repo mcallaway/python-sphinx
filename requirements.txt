@@ -1,8 +1,16 @@
+# started with just matplotlib
 matplotlib
+# added numpy, scipy, and pandas along with matplotlib for seaborn
+numpy
+scipy
+pandas
+seaborn
+# now sphinx
 sphinx
 sphinx-autobuild
 sphinx-jinja
 sphinxcontrib-confluencebuilder
 sphinxcontrib-plantuml
+# now themes
 sphinx-rtd-theme
 Flask-Sphinx-Themes
